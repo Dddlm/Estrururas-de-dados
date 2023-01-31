@@ -1,0 +1,188 @@
+ex1
+-#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct sdata{
+	int dia;
+	char mes[15];
+	int ano;
+	
+}data;
+
+void imprimedata(data pessoa){
+	printf("O ano de seu nascimento e: %i\n",pessoa.ano);
+	printf("O mes de seu nascimento e: %s\n",pessoa.mes);
+	printf("O dia de seu nascimento e: %i\n",pessoa.dia);
+}
+
+int main(){
+	data pessoa;
+	
+	fflush(stdin);
+	printf("\nAno de nascimento:");
+	scanf("%i",&pessoa.ano);
+	
+	fflush(stdin);
+	printf("\nMes de nascimento:");
+	scanf("%i",&pessoa.mes);
+	
+	fflush(stdin);
+	printf("\nDia de nascimento:");
+	scanf("%i",&pessoa.dia);
+	
+	
+	imprimedata(pessoa);
+	
+	return 0;
+}
+
+ex2-
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct sdata{
+	char nome[100];
+	int dia;
+	int mes;
+	int ano;
+	
+}data;
+
+void armazenadata(data *aluno){
+	int i;
+	for(i=0;i<2;i++ ){
+		fflush(stdin);
+		printf("\nO nome do aluno %:");
+		scanf("%i",&aluno[i].nome);
+		fflush(stdin);
+		printf("\nAno de nascimento:");
+		scanf("%i",&aluno[i].ano);
+		fflush(stdin);
+		printf("\nMes de nascimento:");
+		scanf("%i",&aluno[i].mes);
+		fflush(stdin);
+		printf("\nDia de nascimento:");
+		scanf("%i",&aluno[i].dia);
+	}
+	
+}
+
+void imprimedata(data *pessoa){
+	int i;
+	for(i=0;i<36;i++)
+	printf("a data de nascimento de %s e %d/%d/%d/\n",pessoa[i].nome,pessoa[i].dia,pessoa[i].mes,pessoa[i].ano);
+}
+
+int main(){
+	data *aluno=0;
+	int i=0;
+	
+	aluno=(data*)calloc(36,sizeof(data));
+	
+	if(aluno==NULL){
+		exit(1);
+	}
+	
+	armazenadata(*aluno);
+	imprimedata(*aluno);
+	
+	free(aluno);
+	return 0;
+}
+ex3-
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct sdata{
+	int dia;
+	char mes[20];
+	int ano;
+	
+}data;
+
+int veragosto(data *aluno,int numalunos){
+	int x=0,i=0;
+	for(i=0;i<numalunos;i++)
+		if(aluno[i].mes=="agosto"){
+		x++;
+		}
+	
+	return x;
+}
+
+void armazenadata(data *aluno){
+	int i;
+	for(i=0;i<2;i++ ){
+		fflush(stdin);
+		printf("\nAno de nascimento:");
+		scanf("%i",&aluno[i].ano);
+		fflush(stdin);
+		printf("\nMes de nascimento:");
+		scanf("%i",&aluno[i].mes);
+		fflush(stdin);
+		printf("\nDia de nascimento:");
+		scanf("%i",&aluno[i].dia);
+	}
+	
+}
+
+void imprimedata(data *pessoa){
+	int i;
+	for(i=0;i<36;i++)
+	printf("a data de nascimento e %d/%d/%d/\n",pessoa[i].dia,pessoa[i].mes,pessoa[i].ano);
+}
+
+int main(){
+	int numalunos=0;
+	data *alunos;
+	
+	alunos=(data*)malloc(numalunos*sizeof(data));
+	if(alunos==NULL){
+		exit(1);
+	}
+	
+	armazenadata(*alunos);
+	imprimedata(*alunos);
+	
+	return 0;
+}
+ex4-
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct sendereco{
+	int num;
+	char rua[30];
+	char bairro[30];
+	
+}endereco;
+
+typedef struct sdata{
+	char nome[100];
+	int dia;
+	int mes;
+	int ano;
+	
+}data;
+
+typedef struct scliente{
+	char nome[30];
+	data nascimento;
+	endereco residencial;
+	
+}cliente;
+
+int main(){
+	int clientes=100,i;
+	cliente *empresa;
+	
+	empresa=(cliente*)calloc(clientes,sizeof(cliente));
+	if(cliente==NULL){
+		exit(1);
+	}
+	
+	for(i=0;i<clientes;i++)
+	
+	
+	return 0;
+}

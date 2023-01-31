@@ -1,0 +1,106 @@
+1-
+#include<stdio.h>
+#include<stdlib.h>
+
+#define TAMLISTA 10
+
+typedef struct sLISTA{
+	
+	char L[TAMLISTA];
+	int n;
+	
+}LISTA;
+
+void inicializar_lista(LISTA *L){
+
+	L->n=-1;
+}
+
+int lista_vazia(LISTA *L){
+	
+	if(L->n==-1)
+		return 1;
+	else
+		return 0;
+}
+
+int lista_cheia(LISTA *L){
+	
+	if(L->n==-1)
+		return 1;
+	else
+		return 0;
+}
+
+int insere_elemento_no_final(LISTA *L,char elem){
+	
+	if(lista_cheia==1){
+		printf("operacao invalida, a lista esta cheia");
+		return 1; 
+	}else {
+		printf("inserido com sucesso");
+		L->L[L->n]=elem;
+		L->n++;
+		return 0;
+	}
+}
+
+int remove_ultimo_elemento_da_lista(LISTA *L){
+	
+	if(lista_vazia(L)==1){
+		printf("operação invalida, a lista esta vazia");
+		return 1;
+	}else {
+	
+	L->n--;
+		printf("operacao realizada");
+		return 0;	
+	}
+}
+
+void empurra_elem(){
+	
+	
+}
+
+
+int altera_elemento(LISTA *L,char elem,int pos){
+	
+	if(L->n>=pos){
+		printf("operação erronea, a posicao solicitada nao existe");
+		return 1;
+	}else{
+		L->L[pos]=elem;
+		printf("operacao realizada com sucesso");
+		return 0;
+	}
+}
+
+
+void exibe_lista(LISTA *L){
+	int i;
+	for(i=0;i<TAMLISTA;i++){
+		printf("o elemento %d e %c\n",L->n[i],L->L[i]);
+	}
+}
+
+int main(){
+	
+	LISTA L;
+	
+	int op;
+	
+	while(op!=0){
+		printf("");
+		
+		
+		scanf("%d",&op);
+		
+		
+	}
+	
+	
+	
+	inicializarlista(&L);
+
+}
